@@ -8,11 +8,6 @@ import Signup from './components/Signup'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
 
-function Header() {
-
-  return <h2>Header Component</h2>
-
-}
 
 
 export default class App extends Component {
