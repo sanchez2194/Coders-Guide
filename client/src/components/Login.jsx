@@ -1,15 +1,15 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 export default class Login extends Component {
     state = {
         email: '',
         password: '',
         errorMessage: ''
-        
+
     };
 
-   
+
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -22,17 +22,17 @@ export default class Login extends Component {
                 password
             }
         })
-        .then((response) => {
-            const isAuthenticated = response.data.isAuthenticated;
-            window.localStorage.setItem('isAuthenticated', isAuthenticated);
-            this.props.history.push('/profile');
-            
-        })
-        .catch((error) => {
-            this.setState({
-                errorMessage: error.response.data.message
-            })            
-        });
+            .then((response) => {
+                const isAuthenticated = response.data.isAuthenticated;
+                window.localStorage.setItem('isAuthenticated', isAuthenticated);
+                this.props.history.push('/profile');
+
+            })
+            .catch((error) => {
+                this.setState({
+                    errorMessage: error.response.data.message
+                })
+            });
     };
     handleChange = (event) => {
         const { name, value } = event.target;
@@ -44,20 +44,33 @@ export default class Login extends Component {
         const isAuthenticated = window.localStorage.getItem('isAuthenticated');
 
         if (isAuthenticated) {
-            return <Redirect to = '/profile'/>
+            return <Redirect to='/profile' />
         }
         //JSX
         return (
-            <div>
-                <h2>Login Component</h2>
-                <form onSubmit={this.handleSubmit} >
-                    <input type="text" name="email" onChange={this.handleChange} />
-                    <input type="password" name="password" onChange={this.handleChange} />
+            <>
+            <div className = 'header'>
+                <h1>Coder's Guide</h1>
+                <h2>Every coder's best friend</h2>
+            </div>
 
-                    <button>Login</button>
+            <div className="box-container">
+                <div className = 'inner-text-box'>
+                <h2>Welcome Back</h2>
+                <form onSubmit={this.handleSubmit} >
+                    <div className='input'>
+                        <input type="text" name="email" placeholder = 'email@test.com' onChange={this.handleChange} /> <br /><br />
+                        <input type="password" name="password" placeholder = 'password' onChange={this.handleChange} /><br /><br />
+                    </div>
+                    <div className='button'>
+                        <button>Login</button>
+                    </div>
                 </form>
                 <p>{this.state.errorMessage}</p>
+                </div>
             </div>
+            </>
+
         );
     }
 

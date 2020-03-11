@@ -7,16 +7,31 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
+import Particles from 'react-particles-js';
 
 
+const paritcleOpt = {
+  particles: {
+      number:{
+        value: 150,
+        density: {
+          enable:true,
+          value_area: 800
+        }
+      }
+  }
+}
 
 export default class App extends Component {
 
   render() {
     //JSX
     return (
-
+      <>
+        
+      
       <Router>
+      <Particles params={paritcleOpt} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/profile" component={Profile} />
@@ -26,8 +41,8 @@ export default class App extends Component {
           <Route path="*" component={NotFound} />        
         </Switch>
       </Router>
-
-
+      
+      </>
     );
   }
 

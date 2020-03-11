@@ -36,13 +36,16 @@ export default class Signup extends Component {
     render() {
         //JSX
         return (
-            <div>
-                <h2>Signup Component</h2>
+            <div className="box-container">
+                <h2>Signup</h2>
                 <form onSubmit={this.handleSubmit} >
-                    <input type="text" name="email" onChange={this.handleChange} />
-                    <input type="password" name="password" onChange={this.handleChange} />
-
-                    <button>Signup</button>
+                    <div className='input'>
+                        <input type="text" name="email" placeholder = 'email@test.com' onChange={this.handleChange} /> <br /><br />
+                        <input type="password" name="password" placeholder = 'password' onChange={this.handleChange} /><br /><br />
+                    </div>
+                    <div className='button'>
+                        <button>Login</button>
+                    </div>
                 </form>
             </div>
         );

@@ -2,22 +2,35 @@
   "name": "coders-guide",
   "version": "0.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
-    "start": "cd client && npm start && nodemon app.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "concurrently": "^5.1.0",
+    "bootstrap": "^4.4.1",
     "cookie-parser": "~1.4.4",
     "cookie-session": "^1.4.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "hbs": "~4.0.4",
+    "hbs": "^4.1.0",
     "http-errors": "~1.6.3",
+    "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.3",
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-particles-js": "^2.7.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
   }
 }

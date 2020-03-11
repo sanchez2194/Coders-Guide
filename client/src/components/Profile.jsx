@@ -7,7 +7,9 @@ export default class Profile extends Component {
         //JSX
         return(
             <div>
-                <h1>I am the Profile Component</h1>
+                <div class="container" >
+                
+                </div>
             </div>
         );
     }
