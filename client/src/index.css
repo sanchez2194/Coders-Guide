@@ -15,6 +15,16 @@ body {
   bottom: 700px;
 }
 
+.box-container2 {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  padding: 50px;
+  background-color: rgb(255, 255, 255, .2);
+  position: relative;
+  bottom: 700px;
+}
+
 .inner-text-box {
   position: relative;
   bottom: 30px;
@@ -38,6 +48,13 @@ h2 {
            0 0 40px #A5F1FF;
 }
 
+h3 {
+  color: #D0F8FF;
+  text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+           0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+           0 0 40px #A5F1FF;
+}
+
 .header {
   position: relative;
   bottom: 750px;
@@ -53,4 +70,46 @@ h2 {
 
 p {
   text-align: center;
+}
+
+.home-header {
+  position: relative;
+  bottom: 650px;
+}
+
+.home-container {
+  text-align: center;
+  width: 150px;
+  height: 100px;
+  margin: auto;
+  padding: 50px;
+  background-color: rgb(255, 255, 255, .2);
+  position: relative;
+  bottom: 600px;
+}
+
+#button1 {
+  height: 20px;
+  width: 150px;
+  position: relative;
+  right: 5px;
+  background-color: rgba(0, 255, 187, 0.783);
+}
+
+#button2 {
+  height: 20px;
+  width: 150px;
+  position: relative;
+  right: 5px;
+  background-color: rgba(0, 255, 187, 0.783);
+}
+
+.inner-text1 {
+  position: relative;
+  bottom: 50px;
+}
+
+.inner-text2 {
+  position: relative;
+  bottom: 110px;
 }

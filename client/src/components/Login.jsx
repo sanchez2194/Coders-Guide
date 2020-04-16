@@ -54,7 +54,7 @@ export default class Login extends Component {
                 <h2>Every coder's best friend</h2>
             </div>
 
-            <div className="box-container">
+            <div className="box-container2">
                 <div className = 'inner-text-box'>
                 <h2>Welcome Back</h2>
                 <form onSubmit={this.handleSubmit} >

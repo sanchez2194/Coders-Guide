@@ -33,7 +33,7 @@ export default class App extends Component {
       <Router>
       <Particles params={paritcleOpt} />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Signup} />
           <Route path="/profile" component={Profile} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/signup" component={Signup} />

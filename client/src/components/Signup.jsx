@@ -18,14 +18,14 @@ export default class Signup extends Component {
                 password
             }
         })
-        .then((response) => {
-            this.props.history.push('/profile');
-            
-        })
-        .catch((error) => {
-            console.log('Error: ', error.response);
-            
-        });
+            .then((response) => {
+                this.props.history.push('/profile');
+
+            })
+            .catch((error) => {
+                console.log('Error: ', error.response);
+
+            });
     };
     handleChange = (event) => {
         const { name, value } = event.target;
@@ -36,18 +36,25 @@ export default class Signup extends Component {
     render() {
         //JSX
         return (
+            <>
+            <div className='header'>
+                <h1>Coder's Guide</h1>
+                <h2>Every coder's best friend</h2>
+            </div>
+
             <div className="box-container">
-                <h2>Signup</h2>
+                <h2>Welcome</h2>
                 <form onSubmit={this.handleSubmit} >
                     <div className='input'>
-                        <input type="text" name="email" placeholder = 'email@test.com' onChange={this.handleChange} /> <br /><br />
-                        <input type="password" name="password" placeholder = 'password' onChange={this.handleChange} /><br /><br />
+                        <input type="text" name="email" placeholder='email@test.com' onChange={this.handleChange} /> <br /><br />
+                        <input type="password" name="password" placeholder='password' onChange={this.handleChange} /><br /><br />
                     </div>
                     <div className='button'>
-                        <button>Login</button>
+                        <button>Signup</button>
                     </div>
                 </form>
             </div>
+            </>
         );
     }
 
